@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "949246123139",
+    "project_id": "emoney-radenz",
+    "storage_bucket": "emoney-radenz.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949246123139:android:42c3e8a62c2b800cf88fb6",
+        "android_client_info": {
+          "package_name": "com.example.dompet_toku"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAJsn97RcgfFzNvm0wxHy6ZGN6YlhsDTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949246123139:android:b147ff157eaf37c7f88fb6",
+        "android_client_info": {
+          "package_name": "com.radenz.emoney"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAJsn97RcgfFzNvm0wxHy6ZGN6YlhsDTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
