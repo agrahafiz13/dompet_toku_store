@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/router/app_router.dart';
+import 'core/services/deeplink_service.dart';
 import 'core/theme/app_theme.dart';
 import 'core/utils/app_bloc_observer.dart';
 import 'injection/injection_container.dart' as di;
+
+// Top-level variable — mencegah DeeplinkService di-garbage collect selama
+// proses berjalan sehingga uriLinkStream tetap aktif untuk in-app deeplinks.
+late final DeeplinkService _deeplinkService;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,16 +35,21 @@ void main() async {
     statusBarIconBrightness: Brightness.dark,
   ));
 
-  runApp(const DompetKampusApp());
+  // Simpan instance agar tidak di-GC — stream subscription harus tetap hidup
+  // untuk menerima in-app deeplinks via onNewIntent (Android singleTop).
+  _deeplinkService = DeeplinkService(AppRouter.router);
+  await _deeplinkService.init();
+
+  runApp(const DompetTokuApp());
 }
 
-class DompetKampusApp extends StatelessWidget {
-  const DompetKampusApp({super.key});
+class DompetTokuApp extends StatelessWidget {
+  const DompetTokuApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Dompet Kampus Global',
+      title: 'Dompet Toku',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       routerConfig: AppRouter.router,
