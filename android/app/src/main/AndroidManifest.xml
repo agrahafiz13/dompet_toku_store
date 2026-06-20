@@ -24,6 +24,19 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <intent-filter android:autoVerify="false"> [cite: 174]
+                <action android:name="android.intent.action.VIEW"/> [cite: 175]
+                <category android:name="android.intent.category.DEFAULT"/> [cite: 176]
+                <category android:name="android.intent.category.BROWSABLE"/> [cite: 177]
+                <data android:scheme="dompetkampus" android:host="pay"/> [cite: 178]
+            </intent-filter> [cite: 179]
+
+            <intent-filter android:autoVerify="false"> [cite: 183]
+                <action android:name="android.intent.action.VIEW"/> [cite: 184]
+                <category android:name="android.intent.category.DEFAULT"/> [cite: 185]
+                <category android:name="android.intent.category.BROWSABLE"/> [cite: 186]
+                <data android:scheme="https" android:host="dompetkampus.app" android:pathPrefix="/pay"/> [cite: 187]
+            </intent-filter> [cite: 188]
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
