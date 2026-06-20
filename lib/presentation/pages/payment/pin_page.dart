@@ -5,7 +5,6 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/currency_formatter.dart';
 import '../../blocs/payment/payment_bloc.dart';
-import '../../widgets/feature_icon.dart';
 import '../../widgets/pin_pad.dart';
 
 class PinPage extends StatefulWidget {
