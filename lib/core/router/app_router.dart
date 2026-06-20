@@ -1,37 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../../injection/injection_container.dart';
-import '../../../presentation/blocs/account/account_bloc.dart';
-import '../../../presentation/blocs/auth/auth_bloc.dart';
-import '../../../presentation/blocs/auth/otp_bloc.dart';
-import '../../../presentation/blocs/payment/payment_bloc.dart';
-import '../../../presentation/pages/account/account_page.dart';
-import '../../../presentation/pages/auth/login_page.dart';
-import '../../../presentation/pages/auth/register_page.dart';
-import '../../../presentation/pages/auth/setup_2fa_page.dart';
-import '../../../presentation/pages/auth/twofa_notif_page.dart';
-import '../../../presentation/pages/auth/twofa_smtp_page.dart';
-import '../../../presentation/pages/auth/twofa_totp_page.dart';
-import '../../../presentation/pages/auth/verify_email_page.dart';
-import '../../../presentation/pages/history/history_page.dart';
-import '../../../presentation/pages/home/home_page.dart';
-import '../../../presentation/pages/merchant/merchant_checkout_page.dart';
-import '../../../presentation/pages/payment/payment_qr_page.dart';
-import '../../../presentation/pages/payment/pin_page.dart';
-import '../../../presentation/pages/promo/promo_page.dart';
-import '../../../presentation/pages/splash/splash_page.dart';
-import '../../../presentation/pages/success/success_page.dart';
-import '../../../presentation/pages/topup/topup_page.dart';
-import '../../../presentation/pages/transfer/transfer_amount_page.dart';
-import '../../../presentation/pages/transfer/transfer_confirm_page.dart';
-import '../../../presentation/pages/transfer/transfer_page.dart';
-import '../../../presentation/widgets/app_tab_bar.dart';
+import '../../injection/injection_container.dart';
+import '../../presentation/blocs/account/account_bloc.dart';
+import '../../presentation/blocs/auth/auth_bloc.dart';
+import '../../presentation/blocs/auth/otp_bloc.dart';
+import '../../presentation/blocs/payment/payment_bloc.dart';
+import '../../presentation/pages/account/account_page.dart';
+import '../../presentation/pages/auth/login_page.dart';
+import '../../presentation/pages/auth/register_page.dart';
+import '../../presentation/pages/auth/setup_2fa_page.dart';
+import '../../presentation/pages/auth/twofa_notif_page.dart';
+import '../../presentation/pages/auth/twofa_smtp_page.dart';
+import '../../presentation/pages/auth/twofa_totp_page.dart';
+import '../../presentation/pages/auth/verify_email_page.dart';
+import '../../presentation/pages/history/history_page.dart';
+import '../../presentation/pages/home/home_page.dart';
+import '../../presentation/pages/merchant/merchant_checkout_page.dart';
+import '../../presentation/pages/payment/payment_deeplink_page.dart';
+import '../../presentation/pages/payment/payment_qr_page.dart';
+import '../../presentation/pages/payment/pin_page.dart';
+import '../../presentation/pages/promo/promo_page.dart';
+import '../../presentation/pages/splash/splash_page.dart';
+import '../../presentation/pages/success/success_page.dart';
+import '../../presentation/pages/topup/topup_page.dart';
+import '../../presentation/pages/transfer/transfer_amount_page.dart';
+import '../../presentation/pages/transfer/transfer_confirm_page.dart';
+import '../../presentation/pages/transfer/transfer_page.dart';
+import '../../presentation/widgets/app_tab_bar.dart';
 
 class AppRouter {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
-  static GoRouter get router => GoRouter(
+  // static final (bukan getter) agar GoRouter dibuat sekali saja —
+  // instance yang sama dipakai oleh MaterialApp.router dan DeeplinkService.
+  static final GoRouter router = GoRouter(
         navigatorKey: _rootNavigatorKey,
         initialLocation: '/',
         routes: [
@@ -146,10 +149,6 @@ class AppRouter {
             },
           ),
           GoRoute(
-            path: '/pay',
-            builder: (_, state) => _withPayment(PaymentDeeplinkPage(data: state.extra)),
-          ),
-          GoRoute(
             path: '/success',
             builder: (_, state) {
               final extra = (state.extra as Map<String, dynamic>?) ?? {};
@@ -164,6 +163,11 @@ class AppRouter {
             },
           ),
           GoRoute(path: '/merchant', builder: (_, __) => _withPayment(const MerchantCheckoutPage())),
+          // Pembayaran via deeplink merchant (dompetkampus://pay?... atau https://dompetkampus.app/pay?...)
+          GoRoute(
+            path: '/pay',
+            builder: (_, state) => _withPayment(PaymentDeeplinkPage(data: state.extra)),
+          ),
         ],
       );
 
@@ -190,6 +194,7 @@ class AppRouter {
       BlocProvider(create: (_) => sl<AuthBloc>()),
       BlocProvider(create: (_) => sl<AccountBloc>()),
       BlocProvider(create: (_) => sl<PaymentBloc>()),
+      BlocProvider(create: (_) => sl<OtpBloc>()),
     ], child: child);
   }
 }

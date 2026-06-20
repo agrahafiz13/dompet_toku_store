@@ -157,9 +157,9 @@ class DeeplinkService {
   }
 
   bool _isPaymentLink(Uri uri) {
-    if (uri.scheme == 'dompet_toku' && uri.host == 'pay') return true;
+    if (uri.scheme == 'dompettoku' && uri.host == 'pay') return true;
     if (uri.scheme == 'https' &&
-        uri.host == 'dompet_toku.app' &&
+        uri.host == 'dompettoku.app' &&
         uri.path.startsWith('/pay')) {
       return true;
     }

@@ -70,7 +70,7 @@ class _SplashPageState extends State<SplashPage> {
                       const AppLogo(size: 92, light: true),
                       const SizedBox(height: 26),
                       const Text(
-                        'Dompet Kampus',
+                        'Dompet Toku',
                         style: TextStyle(
                           fontFamily: 'PlusJakartaSans',
                           fontSize: 30,
