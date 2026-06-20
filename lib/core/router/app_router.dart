@@ -146,6 +146,10 @@ class AppRouter {
             },
           ),
           GoRoute(
+            path: '/pay',
+            builder: (_, state) => _withPayment(PaymentDeeplinkPage(data: state.extra)),
+          ),
+          GoRoute(
             path: '/success',
             builder: (_, state) {
               final extra = (state.extra as Map<String, dynamic>?) ?? {};
