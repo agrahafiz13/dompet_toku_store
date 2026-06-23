@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/currency_formatter.dart';
 import '../../blocs/account/account_bloc.dart';
@@ -131,7 +132,20 @@ class _SuccessPageState extends State<SuccessPage> {
                 children: [
                   AppButton(
                     label: 'Selesai',
-                    onPressed: () => context.go('/home'),
+                    onPressed: () async {
+                      // Samakan dengan manifest Toku Store!
+                      final Uri returnUri = Uri.parse('tokustore://payment-callback?status=success');
+
+                      try {
+                        if (await canLaunchUrl(returnUri)) {
+                          await launchUrl(returnUri, mode: LaunchMode.externalApplication);
+                        } else {
+                          context.go('/home');
+                        }
+                      } catch (e) {
+                        context.go('/home');
+                      }
+                    },
                   ),
                   const SizedBox(height: 10),
                   AppButton(
