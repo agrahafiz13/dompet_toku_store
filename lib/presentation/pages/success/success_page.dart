@@ -133,8 +133,9 @@ class _SuccessPageState extends State<SuccessPage> {
                   AppButton(
                     label: 'Selesai',
                     onPressed: () async {
-                      // Samakan dengan manifest Toku Store!
-                      final Uri returnUri = Uri.parse('tokustore://payment-callback?status=success');
+                      // Gunakan alamat murni (tanpa payment-callback)
+                      // Ini akan memanggil Toku Store dari background ke foreground
+                      final Uri returnUri = Uri.parse('tokustore://');
 
                       try {
                         if (await canLaunchUrl(returnUri)) {
