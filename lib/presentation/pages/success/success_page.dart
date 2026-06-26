@@ -132,20 +132,8 @@ class _SuccessPageState extends State<SuccessPage> {
                 children: [
                   AppButton(
                     label: 'Selesai',
-                    onPressed: () async {
-                      // Gunakan alamat murni (tanpa payment-callback)
-                      // Ini akan memanggil Toku Store dari background ke foreground
-                      final Uri returnUri = Uri.parse('tokustore://');
-
-                      try {
-                        if (await canLaunchUrl(returnUri)) {
-                          await launchUrl(returnUri, mode: LaunchMode.externalApplication);
-                        } else {
-                          context.go('/home');
-                        }
-                      } catch (e) {
-                        context.go('/home');
-                      }
+                    onPressed: () {
+                      context.go('/home');
                     },
                   ),
                   const SizedBox(height: 10),
