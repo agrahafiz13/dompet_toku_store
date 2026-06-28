@@ -18,6 +18,15 @@ Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digit
 
 ---
 
+## 📸 Preview Tampilan Aplikasi
+
+| Tampilan | Keterangan |
+| --- | --- |
+| ![DompetToku 1](assets/images/dompettoku1.png) | Tampilan awal / splash atau halaman utama aplikasi |
+| ![DompetToku 2](assets/images/dompettoku2.png) | Halaman login atau proses otentikasi |
+
+---
+
 ## 🧱 Teknologi yang Digunakan
 
 ### Frontend
@@ -35,9 +44,9 @@ Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digit
 
 ### Backend
 - RESTful API E-Wallet Service
-- Mutasi Saldo & Pencatatan Transaksi (ACID Compliance)
+- Mutasi Saldo & Pencatatan Transaksi
 - Verifikasi Firebase Authentication & OTP
-- Endpoint Webhook untuk Notifikasi Pembayaran ke E-commerce
+- Endpoint Webhook untuk Notifikasi Pembayaran ke e-commerce
 - Clean Architecture (Handler, Service, Repository)
 
 ---
@@ -355,6 +364,7 @@ Sebelum menjalankan aplikasi, pastikan hal berikut tersedia:
 - Firebase sudah dikonfigurasi dengan file google-services.json dan firebase_options.dart
 - Base URL API sudah sesuai dengan backend yang digunakan pada file app_constants.dart
 - Emulator/device sudah siap untuk menjalankan aplikasi
+- Jika menggunakan backend lokal, pastikan server backend sudah berjalan sebelum membuka aplikasi Flutter
 
 ---
 
@@ -362,24 +372,69 @@ Sebelum menjalankan aplikasi, pastikan hal berikut tersedia:
 
 ### 1. Clone repository
 
+Clone frontend:
+
 ```bash
-git clone <repository-url>
-cd dompet_toku_store
+git clone https://github.com/USERNAME/toku_store.git dompet_toku_store
 ```
 
-### 2. Install dependency
+Clone backend:
 
 ```bash
+git clone https://github.com/agrahafiz13/dompet_toku_store_be.git dompet_toku_store_be
+```
+
+### 2. Jalankan backend
+
+```bash
+cd dompet_toku_store_be
+```
+
+Install dependency:
+
+```bash
+go mod tidy
+```
+
+Siapkan konfigurasi backend:
+
+- Salin atau buat file `.env` sesuai dokumentasi backend.
+- Pastikan file `firebase_service_account.json` tersedia untuk Firebase.
+
+Jalankan backend:
+
+```bash
+go run main.go
+```
+
+Biasanya backend akan berjalan di `http://localhost:8081` atau port lain yang ditentukan di `.env`.
+
+### 3. Konfigurasi frontend
+
+Pastikan base URL backend diatur di `lib/core/constants/app_constants.dart`:
+
+```dart
+static const String baseUrl = 'http://localhost:8081';
+```
+
+Sesuaikan nilai tersebut jika backend Anda berjalan di port berbeda.
+
+### 4. Install dependency frontend
+
+Buka terminal di folder frontend:
+
+```bash
+cd ../dompet_toku_store
 flutter pub get
 ```
 
-### 3. Jalankan aplikasi
+### 5. Jalankan aplikasi frontend
 
 ```bash
 flutter run
 ```
 
-Untuk Android emulator, web, atau Windows, Anda dapat menjalankan sesuai target yang tersedia.
+Untuk menjalankan target lain seperti web atau windows, gunakan `flutter run -d chrome` atau `flutter run -d windows`.
 
 ---
 
@@ -392,6 +447,20 @@ Aplikasi ini berkomunikasi dengan backend melalui layer API yang sudah diatur pa
 - lib/core/constants/app_constants.dart
 
 Endpoint yang umum dipakai mencakup auth, OTP, account, dan payment.
+
+---
+
+## 🧪 Troubleshooting
+
+### Frontend
+- `flutter pub get` gagal: pastikan koneksi internet aktif dan file `pubspec.yaml` tidak korup.
+- `flutter run` tidak menemukan device: jalankan `flutter devices` lalu pilih target yang tersedia.
+- Error API connection: pastikan `baseUrl` di `lib/core/constants/app_constants.dart` sesuai dengan backend yang berjalan.
+
+### Backend
+- `go mod tidy` error: pastikan Go sudah terinstal dan versi `go` mendukung modul.
+- `go run main.go` gagal: cek file `.env`, `firebase_service_account.json`, dan apakah port backend sudah bebas.
+- Firebase auth gagal: pastikan kredensial `firebase_service_account.json` valid dan project Firebase sudah benar.
 
 ---
 
