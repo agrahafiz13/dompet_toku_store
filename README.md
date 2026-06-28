@@ -20,156 +20,129 @@ Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digit
 
 # 📸 Preview Tampilan Aplikasi
 
-# 📸 Preview Tampilan Aplikasi
+## 📸 Hasil Screenshot Tampilan Aplikasi
 
-<h2 align="center">💳 Dompet Toku (Digital Wallet)</h2>
+### 💳 Dompet Toku (Aplikasi Dompet Digital)
 
-<h3 align="center">Autentikasi Pengguna</h3>
+<table>
+  <tr>
+    <td align="center"><b>1. Splash Screen</b></td>
+    <td align="center"><b>2. Login</b></td>
+    <td align="center"><b>3. Register</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/images/screenshoot/Splash%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Menu%20Login%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Register%20D.jpg" width="250"></td>
+  </tr>
 
-<p align="center">
-  <img src="assets/images/screenshoot/Splash%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Menu%20Login%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Register%20D.jpg" width="220"/>
-</p>
+  <tr>
+    <td align="center"><b>4. Verifikasi OTP Email</b></td>
+    <td align="center"><b>5. Aktivasi Keamanan Akun</b></td>
+    <td align="center"><b>6. QR Google Authenticator</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/images/screenshoot/Verifikasi%20OTP%20Email%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Amankan%20Akun%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Kode%20Authenticator%20D.jpg" width="250"></td>
+  </tr>
 
-<p align="center">
-<b>Splash</b> &nbsp;&nbsp;&nbsp;&nbsp;
-<b>Login</b> &nbsp;&nbsp;&nbsp;&nbsp;
-<b>Register</b>
-</p>
+  <tr>
+    <td align="center"><b>7. Dashboard</b></td>
+    <td align="center"><b>8. Menu Profile</b></td>
+    <td align="center"><b>9. Top Up Saldo</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/images/screenshoot/Dashboard%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Menu%20Profile%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Topup%20D.jpg" width="250"></td>
+  </tr>
 
----
+  <tr>
+    <td align="center"><b>10. Konfirmasi Pembayaran</b></td>
+    <td align="center"><b>11. PIN Pembayaran</b></td>
+    <td align="center"><b>12. Verifikasi Google Authenticator (2FA)</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/images/screenshoot/Konfirmasi%20Pembayaran%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Pin%20Pembayaran%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/2FA%20D%20Pembayaran.jpg" width="250"></td>
+  </tr>
 
-<h3 align="center">Keamanan Akun</h3>
-
-<p align="center">
-  <img src="assets/images/screenshoot/Verifikasi%20OTP%20Email%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Amankan%20Akun%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Kode%20Authenticator%20D.jpg" width="220"/>
-</p>
-
-<p align="center">
-<b>OTP Email</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Aktivasi 2FA</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>QR Authenticator</b>
-</p>
-
----
-
-<h3 align="center">Halaman Utama</h3>
-
-<p align="center">
-  <img src="assets/images/screenshoot/Dashboard%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Menu%20Profile%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Topup%20D.jpg" width="220"/>
-</p>
-
-<p align="center">
-<b>Dashboard</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Profile</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Top Up</b>
-</p>
-
----
-
-<h3 align="center">Pembayaran</h3>
-
-<p align="center">
-  <img src="assets/images/screenshoot/Konfirmasi%20Pembayaran%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Pin%20Pembayaran%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/2FA%20D%20Pembayaran.jpg" width="220"/>
-</p>
-
-<p align="center">
-<b>Konfirmasi</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>PIN</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Google Authenticator</b>
-</p>
+  <tr>
+    <td align="center"><b>13. Pembayaran Berhasil</b></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/images/screenshoot/Success%20D.jpg" width="250"></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 ---
 
-<h3 align="center">Riwayat Transaksi</h3>
+### 📊 Riwayat Transaksi Dompet
 
-<p align="center">
-  <img src="assets/images/screenshoot/Success%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Riwayat%20Transaksi%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Riwayat%20Pemasukan%20D.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Riwayat%20Pengeluaran%20D.jpg" width="220"/>
-</p>
+<table>
+  <tr>
+    <td align="center"><b>1. Semua Transaksi</b></td>
+    <td align="center"><b>2. Riwayat Pemasukan</b></td>
+    <td align="center"><b>3. Riwayat Pengeluaran</b></td>
+  </tr>
 
-<p align="center">
-<b>Pembayaran Berhasil</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Semua Transaksi</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Pemasukan</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Pengeluaran</b>
-</p>
-
-<br>
-
-<h2 align="center">🛒 Toku Store (E-Commerce)</h2>
-
-<h3 align="center">Autentikasi Pengguna</h3>
-
-<p align="center">
-  <img src="assets/images/screenshoot/Menu%20Login%20E.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Register%20E.jpg" width="220"/>
-</p>
-
-<p align="center">
-<b>Login</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Register</b>
-</p>
+  <tr>
+    <td align="center"><img src="assets/images/screenshoot/Riwayat%20Transaksi%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Riwayat%20Pemasukan%20D.jpg" width="250"></td>
+    <td align="center"><img src="assets/images/screenshoot/Riwayat%20Pengeluaran%20D.jpg" width="250"></td>
+  </tr>
+</table>
 
 ---
 
-<h3 align="center">Belanja Produk</h3>
+### 🛒 Toku Store (Aplikasi E-Commerce)
 
-<p align="center">
-  <img src="assets/images/screenshoot/Dashboard%20E.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Menu%20Favorite%20E.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Cart%20Page%20E.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Checkout%20Page%20E.jpg" width="220"/>
-</p>
+<table>
 
-<p align="center">
-<b>Dashboard</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Favorite</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Cart</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Checkout</b>
-</p>
+<tr>
+<td align="center"><b>1. Login</b></td>
+<td align="center"><b>2. Register</b></td>
+<td align="center"><b>3. Dashboard Produk</b></td>
+</tr>
 
----
+<tr>
+<td align="center"><img src="assets/images/screenshoot/Menu%20Login%20E.jpg" width="250"></td>
+<td align="center"><img src="assets/images/screenshoot/Register%20E.jpg" width="250"></td>
+<td align="center"><img src="assets/images/screenshoot/Dashboard%20E.jpg" width="250"></td>
+</tr>
 
-<h3 align="center">Status Pesanan</h3>
+<tr>
+<td align="center"><b>4. Favorite Produk</b></td>
+<td align="center"><b>5. Keranjang Belanja</b></td>
+<td align="center"><b>6. Checkout</b></td>
+</tr>
 
-<p align="center">
-  <img src="assets/images/screenshoot/Payment%20Pending%20E.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Success%20Page%20E.jpg" width="220"/>
-  <img src="assets/images/screenshoot/Riwayat%20Transaksi%20E.jpg" width="220"/>
-</p>
+<tr>
+<td align="center"><img src="assets/images/screenshoot/Menu%20Favorite%20E.jpg" width="250"></td>
+<td align="center"><img src="assets/images/screenshoot/Cart%20Page%20E.jpg" width="250"></td>
+<td align="center"><img src="assets/images/screenshoot/Checkout%20Page%20E.jpg" width="250"></td>
+</tr>
 
-<p align="center">
-<b>Payment Pending</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Order Success</b>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Riwayat Pesanan</b>
-</p>
+<tr>
+<td align="center"><b>7. Menunggu Pembayaran</b></td>
+<td align="center"><b>8. Pembayaran Berhasil</b></td>
+<td align="center"><b>9. Riwayat Pesanan</b></td>
+</tr>
 
-<br>
+<tr>
+<td align="center"><img src="assets/images/screenshoot/Payment%20Pending%20E.jpg" width="250"></td>
+<td align="center"><img src="assets/images/screenshoot/Success%20Page%20E.jpg" width="250"></td>
+<td align="center"><img src="assets/images/screenshoot/Riwayat%20Transaksi%20E.jpg" width="250"></td>
+</tr>
+
+</table>
+
 
 <h2 align="center">🔄 Flow Pembayaran</h2>
 
