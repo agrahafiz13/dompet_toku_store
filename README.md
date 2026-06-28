@@ -245,9 +245,6 @@ Layer UI aplikasi:
 
 ---
 
-# 🏗️ Backend Architecture
-
-```
 backend/
 │
 ├── config/
@@ -288,9 +285,6 @@ backend/
 ├── go.sum                     # Go dependency lock
 └── main.go                    # Entry point
 ```
-
----
-
 ## 🔄 Alur Aplikasi
 
 Secara umum alur aplikasi mengikuti pola berikut:
