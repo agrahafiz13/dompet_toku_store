@@ -20,49 +20,210 @@ Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digit
 
 # 📸 Preview Tampilan Aplikasi
 
-## 💳 Halaman Dompet Digital (Dompet Toku)
+# 📸 Preview Tampilan Aplikasi
 
-| Splash | Login | Register |
-| --- | --- | --- |
-| ![Splash](assets/images/screenshoot/Splash%20D.jpg) | ![Login](assets/images/screenshoot/Menu%20Login%20D.jpg) | ![Register](assets/images/screenshoot/Register%20D.jpg) |
+<h2 align="center">💳 Dompet Toku (Digital Wallet)</h2>
 
-| Verifikasi OTP Email | Amankan Akun | QR Google Authenticator |
-| --- | --- | --- |
-| ![OTP Email](assets/images/screenshoot/Verifikasi%20OTP%20Email%20D.jpg) | ![Amankan Akun](assets/images/screenshoot/Amankan%20Akun%20D.jpg) | ![Google Authenticator](assets/images/screenshoot/Kode%20Authenticator%20D.jpg) |
+<h3 align="center">Autentikasi Pengguna</h3>
 
-| Dashboard | Profile | Top Up |
-| --- | --- | --- |
-| ![Dashboard](assets/images/screenshoot/Dashboard%20D.jpg) | ![Profile](assets/images/screenshoot/Menu%20Profile%20D.jpg) | ![Topup](assets/images/screenshoot/Topup%20D.jpg) |
+<p align="center">
+  <img src="assets/images/screenshoot/Splash%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Menu%20Login%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Register%20D.jpg" width="220"/>
+</p>
 
-| PIN Pembayaran | Konfirmasi Pembayaran | Verifikasi 2FA |
-| --- | --- | --- |
-| ![PIN](assets/images/screenshoot/Pin%20Pembayaran%20D.jpg) | ![Konfirmasi](assets/images/screenshoot/Konfirmasi%20Pembayaran%20D.jpg) | ![2FA](assets/images/screenshoot/2FA%20D%20Pembayaran.jpg) |
-
-| Pembayaran Berhasil | Riwayat Transaksi | Riwayat Pemasukan |
-| --- | --- | --- |
-| ![Success](assets/images/screenshoot/Success%20D.jpg) | ![Riwayat](assets/images/screenshoot/Riwayat%20Transaksi%20D.jpg) | ![Pemasukan](assets/images/screenshoot/Riwayat%20Pemasukan%20D.jpg) |
-
-| Riwayat Pengeluaran |
-| --- |
-| ![Pengeluaran](assets/images/screenshoot/Riwayat%20Pengeluaran%20D.jpg) |
+<p align="center">
+<b>Splash</b> &nbsp;&nbsp;&nbsp;&nbsp;
+<b>Login</b> &nbsp;&nbsp;&nbsp;&nbsp;
+<b>Register</b>
+</p>
 
 ---
 
-## 🛒 Halaman E-Commerce (Toku Store)
+<h3 align="center">Keamanan Akun</h3>
 
-| Login | Register | Dashboard |
-| --- | --- | --- |
-| ![Login Ecommerce](assets/images/screenshoot/Menu%20Login%20E.jpg) | ![Register Ecommerce](assets/images/screenshoot/Register%20E.jpg) | ![Dashboard Ecommerce](assets/images/screenshoot/Dashboard%20E.jpg) |
+<p align="center">
+  <img src="assets/images/screenshoot/Verifikasi%20OTP%20Email%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Amankan%20Akun%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Kode%20Authenticator%20D.jpg" width="220"/>
+</p>
 
-| Favorite | Cart | Checkout |
-| --- | --- | --- |
-| ![Favorite](assets/images/screenshoot/Menu%20Favorite%20E.jpg) | ![Cart](assets/images/screenshoot/Cart%20Page%20E.jpg) | ![Checkout](assets/images/screenshoot/Checkout%20Page%20E.jpg) |
-
-| Payment Pending | Order Success | Riwayat Pesanan |
-| --- | --- | --- |
-| ![Payment Pending](assets/images/screenshoot/Payment%20Pending%20E.jpg) | ![Success](assets/images/screenshoot/Success%20Page%20E.jpg) | ![Riwayat](assets/images/screenshoot/Riwayat%20Transaksi%20E.jpg) |
+<p align="center">
+<b>OTP Email</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Aktivasi 2FA</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>QR Authenticator</b>
+</p>
 
 ---
+
+<h3 align="center">Halaman Utama</h3>
+
+<p align="center">
+  <img src="assets/images/screenshoot/Dashboard%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Menu%20Profile%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Topup%20D.jpg" width="220"/>
+</p>
+
+<p align="center">
+<b>Dashboard</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Profile</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Top Up</b>
+</p>
+
+---
+
+<h3 align="center">Pembayaran</h3>
+
+<p align="center">
+  <img src="assets/images/screenshoot/Konfirmasi%20Pembayaran%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Pin%20Pembayaran%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/2FA%20D%20Pembayaran.jpg" width="220"/>
+</p>
+
+<p align="center">
+<b>Konfirmasi</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>PIN</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Google Authenticator</b>
+</p>
+
+---
+
+<h3 align="center">Riwayat Transaksi</h3>
+
+<p align="center">
+  <img src="assets/images/screenshoot/Success%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Riwayat%20Transaksi%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Riwayat%20Pemasukan%20D.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Riwayat%20Pengeluaran%20D.jpg" width="220"/>
+</p>
+
+<p align="center">
+<b>Pembayaran Berhasil</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Semua Transaksi</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Pemasukan</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Pengeluaran</b>
+</p>
+
+<br>
+
+<h2 align="center">🛒 Toku Store (E-Commerce)</h2>
+
+<h3 align="center">Autentikasi Pengguna</h3>
+
+<p align="center">
+  <img src="assets/images/screenshoot/Menu%20Login%20E.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Register%20E.jpg" width="220"/>
+</p>
+
+<p align="center">
+<b>Login</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Register</b>
+</p>
+
+---
+
+<h3 align="center">Belanja Produk</h3>
+
+<p align="center">
+  <img src="assets/images/screenshoot/Dashboard%20E.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Menu%20Favorite%20E.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Cart%20Page%20E.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Checkout%20Page%20E.jpg" width="220"/>
+</p>
+
+<p align="center">
+<b>Dashboard</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Favorite</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Cart</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Checkout</b>
+</p>
+
+---
+
+<h3 align="center">Status Pesanan</h3>
+
+<p align="center">
+  <img src="assets/images/screenshoot/Payment%20Pending%20E.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Success%20Page%20E.jpg" width="220"/>
+  <img src="assets/images/screenshoot/Riwayat%20Transaksi%20E.jpg" width="220"/>
+</p>
+
+<p align="center">
+<b>Payment Pending</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Order Success</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Riwayat Pesanan</b>
+</p>
+
+<br>
+
+<h2 align="center">🔄 Flow Pembayaran</h2>
+
+```text
+Toku Store
+     │
+     ▼
+Login Firebase
+     │
+     ▼
+Dashboard Produk
+     │
+     ▼
+Tambah ke Cart
+     │
+     ▼
+Checkout
+     │
+     ▼
+Backend API (Port 8082)
+     │
+     ▼
+Generate Deep Link
+     │
+     ▼
+Membuka Dompet Toku
+     │
+     ▼
+Konfirmasi Pembayaran
+     │
+     ▼
+Input PIN
+     │
+     ▼
+Google Authenticator (2FA)
+     │
+     ▼
+Backend Validasi
+     │
+     ▼
+Saldo Berkurang
+     │
+     ▼
+Status SUCCESS
+     │
+     ▼
+Callback ke Backend
+     │
+     ▼
+Order Success
+     │
+     ▼
+Riwayat Pesanan
+```
 
 ## 🔄 Flow Penggunaan Aplikasi
 
