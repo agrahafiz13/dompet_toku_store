@@ -1,180 +1,240 @@
-# 🚀 Toku Store - Mobile Marketplace App
+# 🚀 Dompet Toku Store
 
-Toku Store merupakan aplikasi marketplace sederhana berbasis **Flutter** sebagai frontend dan **Golang** sebagai backend REST API. Project ini dikembangkan menggunakan konsep **Monorepo** dengan **Git Subtree**, sehingga Frontend dan Backend tetap memiliki repository masing-masing namun dapat dikelola dalam satu repository utama.
-
----
-
-# 📂 Repository
-
-## Main Repository (Monorepo)
-
-https://github.com/USERNAME/toku_store
-
-## Flutter Repository
-
-https://github.com/USERNAME/toku_store_ui
-
-## Backend Repository
-
-https://github.com/USERNAME/toku_store_api
+Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digital seperti login, registrasi, OTP, top-up, transfer, pembayaran merchant, hingga riwayat transaksi. Aplikasi ini dibangun dengan pendekatan Clean Architecture dan memanfaatkan state management BLoC, dependency injection, serta komunikasi REST API.
 
 ---
 
-# 📱 Mobile Application
+## 📱 Fitur Utama
 
-Fitur utama aplikasi:
-
-- 🔐 Firebase Authentication
-- 🛍️ Menampilkan Produk
-- ❤️ Favorite Produk
-- 🛒 Keranjang Belanja
-- 💳 Checkout
-- 📦 Riwayat Pesanan
-- 💰 Pembayaran menggunakan Dompet Digital
-- 🔗 Integrasi Deep Link
-- 🔔 Push Notification
-- 🔒 Biometric Authentication
-- 🌙 Dark Mode
-- 📱 Responsive UI
-
-# 🌐 Backend API
-
-Backend dibangun menggunakan **Golang**, **Gin Framework**, **GORM**, serta **Firebase Admin SDK**.
-
-Fitur Backend:
-
-- RESTful API
-- Firebase Authentication
-- CRUD Produk
-- Manajemen Cart
-- Checkout Order
-- PostgreSQL Database
-- Authentication Middleware
-- Seeder Produk
+- 🔐 Autentikasi dengan Firebase
+- 📲 Alur OTP dan verifikasi email
+- 🔐 Setup 2FA (SMTP, TOTP, Notifikasi)
+- 💰 Top-up dan transfer
+- 🧾 Halaman pembayaran merchant dan QR payment
+- 📜 Riwayat transaksi dan akun pengguna
+- 🔗 Deep link untuk callback pembayaran
+- 🔔 FCM token dan notifikasi push support
+- 🌓 Tema aplikasi yang konsisten
 
 ---
 
-# 🏛️ Frontend Architecture
+## 🧱 Teknologi yang Digunakan
 
-Frontend dikembangkan menggunakan **Flutter** dengan pendekatan **Feature First Clean Architecture**. Setiap fitur dipisahkan ke dalam modul tersendiri sehingga kode lebih mudah dikembangkan, diuji, dan dipelihara.
+### Frontend
+- Flutter
+- Dart
+- Flutter BLoC
+- Go Router
+- Dio
+- Get It
+- Firebase Auth / Firebase Core / Firebase Messaging
+- Flutter Secure Storage
+- Shared Preferences
+- Mobile Scanner
+- Intl
 
-```
-lib/
-│
-├── core/
-│   ├── constants/
-│   ├── providers/
-│   ├── routes/
-│   ├── services/
-│   ├── theme/
-│   └── widgets/
-│
-├── features/
-│   ├── auth/
-│   ├── dashboard/
-│   ├── cart/
-│   └── order/
-│
-├── firebase_options.dart
-└── main.dart
-```
+### Backend
+- RESTful API E-Wallet Service
+- Mutasi Saldo & Pencatatan Transaksi (ACID Compliance)
+- Verifikasi Firebase Authentication & OTP
+- Endpoint Webhook untuk Notifikasi Pembayaran ke E-commerce
+- Clean Architecture (Handler, Service, Repository)
 
 ---
 
-## 📁 Penjelasan Struktur Frontend
+### Pendukung
+- Android, Web, dan Windows
+- Firebase CLI dan Firebase config
+- App Links untuk deep link
+
+---
+
+## 📁 Struktur Project
+
+```text
+dompet_toku_store/
+├── android/
+│   └── app/src/main/
+│       ├── AndroidManifest.xml
+│       ├── res/
+│       └── kotlin/com/example/dompet_toku/
+│           └── MainActivity.kt
+├── ios/
+├── web/
+├── linux/
+├── macos/
+├── windows/
+├── test/
+├── .gitignore
+├── .metadata
+├── analysis_options.yaml
+├── pubspec.yaml
+├── pubspec.lock
+├── README.md
+└── lib/
+    ├── main.dart
+    ├── firebase_options.dart
+    ├── core/
+    │   ├── constants/
+    │   │   ├── api_endpoints.dart
+    │   │   └── app_constants.dart
+    │   ├── error/
+    │   │   ├── exceptions.dart
+    │   │   └── failures.dart
+    │   ├── network/
+    │   │   └── api_client.dart
+    │   ├── router/
+    │   │   └── app_router.dart
+    │   ├── services/
+    │   │   ├── deeplink_service.dart
+    │   │   └── deeplink_callback_service.dart
+    │   ├── theme/
+    │   │   ├── app_colors.dart
+    │   │   ├── app_text_styles.dart
+    │   │   └── app_theme.dart
+    │   └── utils/
+    │       ├── app_bloc_observer.dart
+    │       ├── currency_formatter.dart
+    │       └── date_formatter.dart
+    ├── data/
+    │   ├── models/
+    │   │   ├── account_model.dart
+    │   │   ├── transaction_model.dart
+    │   │   └── user_model.dart
+    │   ├── datasources/
+    │   │   ├── local/
+    │   │   │   └── secure_storage_datasource.dart
+    │   │   └── remote/
+    │   │       ├── auth_remote_datasource.dart
+    │   │       ├── account_remote_datasource.dart
+    │   │       ├── otp_remote_datasource.dart
+    │   │       └── payment_remote_datasource.dart
+    │   └── repositories/
+    │       ├── account_repository_impl.dart
+    │       ├── auth_repository_impl.dart
+    │       ├── otp_repository_impl.dart
+    │       └── payment_repository_impl.dart
+    ├── domain/
+    │   ├── entities/
+    │   │   ├── account_entity.dart
+    │   │   ├── otp_entity.dart
+    │   │   ├── payment_result_entity.dart
+    │   │   ├── transaction_entity.dart
+    │   │   └── user_entity.dart
+    │   ├── repositories/
+    │   │   ├── account_repository.dart
+    │   │   ├── auth_repository.dart
+    │   │   ├── otp_repository.dart
+    │   │   └── payment_repository.dart
+    │   └── usecases/
+    │       ├── account/
+    │       │   └── get_account_usecase.dart
+    │       ├── auth/
+    │       │   ├── get_me_usecase.dart
+    │       │   ├── logout_usecase.dart
+    │       │   ├── register_with_otp_usecase.dart
+    │       │   ├── send_otp_usecase.dart
+    │       │   ├── verify_email_otp_usecase.dart
+    │       │   └── verify_firebase_token_usecase.dart
+    │       └── payment/
+    │           └── payment_usecases.dart
+    ├── injection/
+    │   └── injection_container.dart
+    └── presentation/
+        ├── blocs/
+        │   ├── account/
+        │   │   └── account_bloc.dart
+        │   ├── auth/
+        │   │   ├── auth_bloc.dart
+        │   │   └── otp_bloc.dart
+        │   └── payment/
+        │       └── payment_bloc.dart
+        ├── pages/
+        │   ├── account/
+        │   │   └── account_page.dart
+        │   ├── auth/
+        │   │   ├── login_page.dart
+        │   │   ├── register_page.dart
+        │   │   ├── setup_2fa_page.dart
+        │   │   ├── twofa_notif_page.dart
+        │   │   ├── twofa_smtp_page.dart
+        │   │   ├── twofa_totp_page.dart
+        │   │   └── verify_email_page.dart
+        │   ├── history/
+        │   │   └── history_page.dart
+        │   ├── home/
+        │   │   └── home_page.dart
+        │   ├── merchant/
+        │   │   └── merchant_checkout_page.dart
+        │   ├── payment/
+        │   │   ├── payment_deeplink_page.dart
+        │   │   ├── payment_qr_page.dart
+        │   │   └── pin_page.dart
+        │   ├── promo/
+        │   │   └── promo_page.dart
+        │   ├── splash/
+        │   │   └── splash_page.dart
+        │   ├── success/
+        │   │   └── success_page.dart
+        │   ├── topup/
+        │   │   └── topup_page.dart
+        │   └── transfer/
+        │       ├── transfer_page.dart
+        │       ├── transfer_amount_page.dart
+        │       └── transfer_confirm_page.dart
+        └── widgets/
+            ├── app_avatar.dart
+            ├── app_badge.dart
+            ├── app_button.dart
+            ├── app_field.dart
+            ├── app_logo.dart
+            ├── app_tab_bar.dart
+            ├── app_top_bar.dart
+            ├── code_input.dart
+            ├── feature_icon.dart
+            ├── num_pad.dart
+            ├── pin_pad.dart
+            ├── success_check.dart
+            └── transaction_row.dart
+
+---
+
+## 🏗️ Penjelasan Struktur Utama
 
 ### core/
+Folder ini berisi komponen global yang dipakai lintas fitur, seperti:
 
-Berisi komponen yang digunakan secara global oleh seluruh fitur aplikasi.
+- constants: endpoint API, konstanta aplikasi, key storage
+- error: exception dan failure handling
+- network: client HTTP berbasis Dio
+- router: navigasi aplikasi dengan Go Router
+- services: deeplink, callback, dan service pendukung
+- theme: warna, teks, tema aplikasi
+- utils: formatter dan helper umum
 
-| Folder | Fungsi |
-|---------|---------|
-| constants | Menyimpan konstanta seperti Base URL API, warna, dan string aplikasi |
-| providers | Menyimpan state global aplikasi seperti tema dan favorit |
-| routes | Mengatur navigasi antar halaman |
-| services | Berisi komunikasi API, Secure Storage, Notification Service, Biometric Service, dan DompetPay Service |
-| theme | Mengatur tema aplikasi (Light & Dark Mode) |
-| widgets | Widget yang dapat digunakan kembali di seluruh aplikasi |
+### data/
+Folder ini menangani sumber data aplikasi:
 
----
+- datasources/local: secure storage
+- datasources/remote: API remote auth, account, payment, OTP
+- models: representasi data dari API
+- repositories: implementasi repository sesuai kontrak domain
 
-### features/
+### domain/
+Layer bisnis aplikasi:
 
-Seluruh fitur aplikasi dipisahkan menjadi beberapa modul.
+- entities: model domain
+- repositories: interface repository
+- usecases: logika bisnis yang dipakai presenter/bloc
 
-```
-features/
-│
-├── auth/
-├── dashboard/
-├── cart/
-└── order/
-```
+### presentation/
+Layer UI aplikasi:
 
-Setiap fitur memiliki struktur yang sama.
-
-```
-feature/
-│
-├── data/
-│   ├── models/
-│   └── repositories/
-│
-├── domain/
-│   └── repositories/
-│
-└── presentation/
-    ├── pages/
-    ├── providers/
-    └── widgets/
-```
-
-#### Data Layer
-
-Berfungsi mengambil data dari Backend REST API.
-
-#### Domain Layer
-
-Berisi kontrak (Repository Interface) yang menjadi penghubung antara Presentation dan Data Layer.
-
-#### Presentation Layer
-
-Berisi halaman (Pages), Provider, serta Widget yang digunakan pengguna.
+- blocs: state management menggunakan Flutter BLoC
+- pages: halaman-halaman aplikasi seperti login, register, home, transfer, payment, success
+- widgets: komponen UI reusable
 
 ---
-
-## 🔄 Frontend Flow
-
-```
-User
-   │
-   ▼
-Page
-   │
-   ▼
-Provider
-   │
-   ▼
-Repository
-   │
-   ▼
-Dio Client
-   │
-   ▼
-REST API
-   │
-   ▼
-JSON Response
-   │
-   ▼
-Model
-   │
-   ▼
-Provider
-   │
-   ▼
-UI Update
-```
 
 # 🏗️ Backend Architecture
 
@@ -220,346 +280,136 @@ backend/
 └── main.go                    # Entry point
 ```
 
-# 🔄 Alur Kerja Aplikasi
+---
 
-### 1. Login
+## 🔄 Alur Aplikasi
 
-```
+Secara umum alur aplikasi mengikuti pola berikut:
+
+```text
 User
-      │
-      ▼
-Firebase Authentication
-      │
-      ▼
-Backend Verifikasi Firebase Token
-      │
-      ▼
-JWT Session
-      │
-      ▼
-Dashboard
+  ↓
+Presentation (Page / Widget / BLoC)
+  ↓
+Use Case
+  ↓
+Repository
+  ↓
+Remote / Local Data Source
+  ↓
+API / Secure Storage
 ```
+
+Contoh alur yang tersedia pada project ini:
+
+1. User membuka aplikasi dan diarahkan ke splash/login
+2. Autentikasi dan OTP dilakukan melalui layanan auth
+3. Setelah login, user dapat melihat akun, transaksi, dan melakukan top-up/transfer
+4. Proses pembayaran merchant akan memanfaatkan deep link dan callback service
 
 ---
 
-### 2. Menambahkan Produk ke Keranjang
+## 🧭 Cara Penggunaan Aplikasi
 
-```
-Dashboard
-      │
-      ▼
-Pilih Produk
-      │
-      ▼
-Tambah ke Cart
-      │
-      ▼
-Backend API
-      │
-      ▼
-MySQL
-      │
-      ▼
-Cart Updated
-```
+Berikut alur penggunaan aplikasi yang paling sesuai dengan skenario pembayaran digital pada project ini:
 
----
+1. User login ke aplikasi e-commerce dan memilih produk yang ingin dibeli.
+2. Produk dimasukkan ke dalam keranjang lalu user masuk ke halaman checkout.
+3. Pada halaman checkout, user memilih metode pembayaran Dompet Digital.
+4. Aplikasi e-commerce memanggil alur pembayaran ke aplikasi Dompet Toku melalui deep link.
+5. Dompet Toku terbuka secara otomatis dan user diminta melakukan verifikasi keamanan, seperti password/PIN dan autentikator (jika 2FA aktif).
+6. Setelah verifikasi berhasil, saldo dompet pengguna akan terpotong sesuai nominal pembayaran.
+7. Sistem kemudian mengirimkan callback kembali ke aplikasi e-commerce.
+8. User dikembalikan ke halaman e-commerce dengan status pembayaran berhasil.
 
-### 3. Checkout
+Flow singkatnya dapat digambarkan seperti ini:
 
-```
-Cart
-      │
-      ▼
+```text
+User login di e-commerce
+  ↓
+Tambah barang ke keranjang
+  ↓
 Checkout
-      │
-      ▼
-Backend
-      │
-      ▼
-Generate Payment
-      │
-      ▼
-Membuat Deep Link DompetPay
+  ↓
+Pilih Dompet Digital
+  ↓
+Deep Link ke aplikasi Dompet Toku
+  ↓
+Verifikasi password / authenticator
+  ↓
+Saldo terpotong
+  ↓
+Callback ke e-commerce
+  ↓
+Kembali ke halaman e-commerce dengan status berhasil
 ```
+
+Alur ini menjadi inti dari fitur deep link dan callback pembayaran yang sudah diimplementasikan pada project ini.
 
 ---
 
-### 4. Pembayaran
+## 🔧 Konfigurasi Dasar
 
-```
-Flutter
-      │
-      ▼
-Launch Deep Link
-      │
-      ▼
-Dompet Digital
-      │
-      ▼
-Verifikasi Saldo
-      │
-      ▼
-Konfirmasi Pembayaran
-      │
-      ▼
-Saldo Berkurang
-      │
-      ▼
-Backend Update Status
-      │
-      ▼
-Status = SUCCESS
-      │
-      ▼
-Order Success Page
-```
+Sebelum menjalankan aplikasi, pastikan hal berikut tersedia:
+
+- Firebase sudah dikonfigurasi dengan file google-services.json dan firebase_options.dart
+- Base URL API sudah sesuai dengan backend yang digunakan pada file app_constants.dart
+- Emulator/device sudah siap untuk menjalankan aplikasi
 
 ---
 
-### 5. Riwayat Pesanan
+## ▶️ Cara Menjalankan Project
 
-```
-Order Success
-      │
-      ▼
-Backend
-      │
-      ▼
-Database
-      │
-      ▼
-My Orders
-```
-
----
-
-# 🛠️ Tech Stack
-
-## Frontend
-
-- Flutter
-- Dart
-- Provider
-- Firebase Authentication
-
-## Backend
-
-- Golang
-- Gin Framework
-- GORM
-- PostgreSQL
-- Firebase Admin SDK
-
-## Tools
-
-- Git
-- Git Subtree
-- Postman
-- VS Code
-
----
-
-# 🚀 Cara Menjalankan Project
-
-## 1. Clone Repository
+### 1. Clone repository
 
 ```bash
-git clone https://github.com/USERNAME/toku_store.git
-cd toku_store
+git clone <repository-url>
+cd dompet_toku_store
 ```
 
----
-
-## 2. Menjalankan Backend
-
-Masuk ke folder backend.
-
-```bash
-cd backend
-```
-
-Install dependency.
-
-```bash
-go mod tidy
-```
-
-Pastikan file berikut tersedia.
-
-```
-firebase-service-account.json
-```
-
-Jalankan Backend.
-
-```bash
-go run main.go
-```
-
-Jika berhasil akan muncul output seperti berikut.
-
-```
-Connected to PostgreSQL
-Firebase initialized
-Server running on :8082
-```
-
-Backend berjalan pada:
-
-```
-http://localhost:8082
-```
-
----
-
-## 3. Menjalankan Flutter
-
-Masuk ke folder UI.
-
-```bash
-cd ui
-```
-
-Install dependency.
+### 2. Install dependency
 
 ```bash
 flutter pub get
 ```
 
-Jalankan aplikasi.
+### 3. Jalankan aplikasi
 
 ```bash
 flutter run
 ```
 
----
-
-# 📡 API Endpoint
-
-## Authentication
-
-| Method | Endpoint | Deskripsi |
-|----------|----------|-----------|
-| POST | /auth/login | Login menggunakan Firebase |
+Untuk Android emulator, web, atau Windows, Anda dapat menjalankan sesuai target yang tersedia.
 
 ---
 
-## Product
+## 📡 Integrasi API
 
-| Method | Endpoint | Deskripsi |
-|----------|----------|-----------|
-| GET | /products | Semua Produk |
-| GET | /products/:id | Detail Produk |
-| POST | /products | Tambah Produk |
-| PUT | /products/:id | Update Produk |
-| DELETE | /products/:id | Hapus Produk |
+Aplikasi ini berkomunikasi dengan backend melalui layer API yang sudah diatur pada:
 
----
+- lib/core/constants/api_endpoints.dart
+- lib/core/network/api_client.dart
+- lib/core/constants/app_constants.dart
 
-## Cart
-
-| Method | Endpoint | Deskripsi |
-|----------|----------|-----------|
-| GET | /cart | Ambil Keranjang |
-| POST | /cart | Tambah Keranjang |
-| PUT | /cart/:id | Update Quantity |
-| DELETE | /cart/:id | Hapus Item |
+Endpoint yang umum dipakai mencakup auth, OTP, account, dan payment.
 
 ---
 
-## Order
+## 🛠️ Catatan Pengembangan
 
-| Method | Endpoint | Deskripsi |
-|----------|----------|-----------|
-| POST | /orders | Checkout |
-| GET | /orders | Riwayat Order |
-
----
-
-# 🔗 Integrasi Flutter & Backend
-
-Flutter menggunakan REST API dengan format JSON.
-
-Base URL:
-
-```
-http://localhost:8080
-```
-
-Authentication menggunakan Firebase ID Token.
-
-Header:
-
-```
-Authorization: Bearer <firebase_id_token>
-```
+- Struktur project ini mengikuti pendekatan modular dan terpisah per layer.
+- Penggunaan BLoC memudahkan pemisahan UI dan logika state.
+- Service seperti deeplink dan secure storage disimpan terpusat di folder core.
+- Project ini cocok untuk dikembangkan lebih lanjut dengan fitur tambahan seperti riwayat detail, promo, notifikasi lanjutan, atau integrasi pembayaran lebih kompleks.
 
 ---
 
-# 💳 Integrasi Dompet Digital
+## 👨‍💻 Developer
 
-Saat pengguna melakukan checkout, aplikasi Flutter akan mengirimkan permintaan pembayaran ke Backend.
-
-Backend akan melakukan validasi transaksi kemudian menghasilkan **Deep Link** menuju aplikasi **Dompet Digital**.
-
-```
-Flutter
-     │
-     ▼
-Backend API
-     │
-     ▼
-Generate Deep Link
-     │
-     ▼
-Launch URL
-     │
-     ▼
-Dompet Digital
-```
-
-Di dalam aplikasi Dompet Digital, pengguna melakukan autentikasi menggunakan PIN, Biometrik, atau Google Authenticator.
-
-Setelah pembayaran berhasil:
-
-- Saldo pengguna akan otomatis berkurang.
-- Status transaksi diperbarui menjadi **SUCCESS**.
-- Backend menyimpan informasi pembayaran ke database.
-- Flutter menerima respons terbaru dan menampilkan halaman **Order Success**.
-
-Jika pembayaran gagal atau saldo tidak mencukupi, backend akan mengubah status transaksi menjadi **FAILED** sehingga pengguna dapat mencoba kembali.
+Project ini dikembangkan sebagai aplikasi Flutter berbasis wallet dan payment flow dengan pendekatan clean architecture.
 
 ---
 
-# 👨‍🎓 Developer
+## 📄 Lisensi
 
-**Nama :** Agra Alfian Hafiz
-
-**NIM :** 1123150025
-
-**Kelas :** TI SE 23 M
-
----
-
-# 🎥 Demo
-
-YouTube
-
-https://youtu.be/ZvV-she-pU0
-
----
-
-# 📄 Lisensi
-
-Project ini dibuat untuk keperluan pembelajaran, penelitian, dan tugas akademik.
-
----
-
-## ⭐ Catatan
-
-- Pastikan PostgreSQL sudah berjalan.
-- Pastikan Firebase Service Account tersedia.
-- Jalankan Backend terlebih dahulu sebelum Flutter.
-- Gunakan Postman untuk menguji endpoint API.
-- Gunakan emulator Android, iOS, atau Chrome untuk menjalankan Flutter.
+Project ini dibuat untuk kebutuhan pembelajaran, pengembangan aplikasi, dan eksperimen arsitektur Flutter.
