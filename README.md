@@ -20,13 +20,12 @@ Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digit
 
 ## 📸 Preview Tampilan Aplikasi
 
-| Tampilan | Keterangan |
-| --- | --- |
-| ![DompetToku 1](assets/images/dompettoku1.png) | Tampilan awal / splash atau halaman utama aplikasi |
-| ![DompetToku 2](assets/images/dompettoku2.png) | Halaman login atau proses otentikasi |
+| Tampilan 1 | Tampilan 2 | Tampilan 3 |
+| --- | --- | --- |
+| ![DompetToku 1](assets/images/dompettoku1.png) | ![DompetToku 2](assets/images/dompettoku2.png) | ![DompetToku 1](assets/images/dompettoku1.png) |
+| Splash / Beranda | Login / Autentikasi | Halaman transaksi / status |
 
 ---
-
 ## 🧱 Teknologi yang Digunakan
 
 ### Frontend
