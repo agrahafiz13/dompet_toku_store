@@ -18,14 +18,88 @@ Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digit
 
 ---
 
-## 📸 Preview Tampilan Aplikasi
+# 📸 Preview Tampilan Aplikasi
 
-| Tampilan 1 | Tampilan 2 | Tampilan 3 |
+## 💳 Halaman Dompet Digital (Dompet Toku)
+
+| Splash | Login | Register |
 | --- | --- | --- |
-| ![DompetToku 1](assets/images/dompettoku1.png) | ![DompetToku 2](assets/images/dompettoku2.png) | ![DompetToku 1](assets/images/dompettoku1.png) |
-| Splash / Beranda | Login / Autentikasi | Halaman transaksi / status |
+| ![Splash](assets/images/screenshoot/Splash%20D.jpg) | ![Login](assets/images/screenshoot/Menu%20Login%20D.jpg) | ![Register](assets/images/screenshoot/Register%20D.jpg) |
+
+| Verifikasi OTP Email | Amankan Akun | QR Google Authenticator |
+| --- | --- | --- |
+| ![OTP Email](assets/images/screenshoot/Verifikasi%20OTP%20Email%20D.jpg) | ![Amankan Akun](assets/images/screenshoot/Amankan%20Akun%20D.jpg) | ![Google Authenticator](assets/images/screenshoot/Kode%20Authenticator%20D.jpg) |
+
+| Dashboard | Profile | Top Up |
+| --- | --- | --- |
+| ![Dashboard](assets/images/screenshoot/Dashboard%20D.jpg) | ![Profile](assets/images/screenshoot/Menu%20Profile%20D.jpg) | ![Topup](assets/images/screenshoot/Topup%20D.jpg) |
+
+| PIN Pembayaran | Konfirmasi Pembayaran | Verifikasi 2FA |
+| --- | --- | --- |
+| ![PIN](assets/images/screenshoot/Pin%20Pembayaran%20D.jpg) | ![Konfirmasi](assets/images/screenshoot/Konfirmasi%20Pembayaran%20D.jpg) | ![2FA](assets/images/screenshoot/2FA%20D%20Pembayaran.jpg) |
+
+| Pembayaran Berhasil | Riwayat Transaksi | Riwayat Pemasukan |
+| --- | --- | --- |
+| ![Success](assets/images/screenshoot/Success%20D.jpg) | ![Riwayat](assets/images/screenshoot/Riwayat%20Transaksi%20D.jpg) | ![Pemasukan](assets/images/screenshoot/Riwayat%20Pemasukan%20D.jpg) |
+
+| Riwayat Pengeluaran |
+| --- |
+| ![Pengeluaran](assets/images/screenshoot/Riwayat%20Pengeluaran%20D.jpg) |
 
 ---
+
+## 🛒 Halaman E-Commerce (Toku Store)
+
+| Login | Register | Dashboard |
+| --- | --- | --- |
+| ![Login Ecommerce](assets/images/screenshoot/Menu%20Login%20E.jpg) | ![Register Ecommerce](assets/images/screenshoot/Register%20E.jpg) | ![Dashboard Ecommerce](assets/images/screenshoot/Dashboard%20E.jpg) |
+
+| Favorite | Cart | Checkout |
+| --- | --- | --- |
+| ![Favorite](assets/images/screenshoot/Menu%20Favorite%20E.jpg) | ![Cart](assets/images/screenshoot/Cart%20Page%20E.jpg) | ![Checkout](assets/images/screenshoot/Checkout%20Page%20E.jpg) |
+
+| Payment Pending | Order Success | Riwayat Pesanan |
+| --- | --- | --- |
+| ![Payment Pending](assets/images/screenshoot/Payment%20Pending%20E.jpg) | ![Success](assets/images/screenshoot/Success%20Page%20E.jpg) | ![Riwayat](assets/images/screenshoot/Riwayat%20Transaksi%20E.jpg) |
+
+---
+
+## 🔄 Flow Penggunaan Aplikasi
+
+### 🛒 Toku Store (E-Commerce)
+
+1. Login menggunakan Firebase Authentication.
+2. Masuk ke halaman Dashboard dan melihat daftar produk.
+3. Menambahkan produk ke Favorite (opsional).
+4. Menambahkan produk ke Cart.
+5. Melakukan Checkout.
+6. Aplikasi mengirim request pembayaran ke Backend.
+7. Backend menghasilkan **Deep Link** menuju aplikasi **Dompet Toku**.
+8. Pengguna diarahkan secara otomatis ke aplikasi Dompet Toku.
+
+---
+
+### 💳 Dompet Toku (Dompet Digital)
+
+1. Deep Link diterima oleh aplikasi Dompet Toku.
+2. Pengguna melihat halaman Konfirmasi Pembayaran.
+3. Pengguna memasukkan PIN transaksi.
+4. Pengguna melakukan verifikasi menggunakan Google Authenticator (2FA).
+5. Backend memvalidasi PIN dan kode OTP.
+6. Saldo pengguna dikurangi sesuai nominal transaksi.
+7. Status pembayaran berubah menjadi **SUCCESS**.
+8. Riwayat transaksi disimpan sebagai pengeluaran pada Dompet Toku.
+
+---
+
+### 🔙 Kembali ke E-Commerce
+
+1. Setelah pembayaran berhasil, Dompet Toku mengirimkan callback ke Backend.
+2. Backend memperbarui status order menjadi **PAID**.
+3. Flutter menerima status terbaru dari Backend.
+4. Pengguna kembali ke aplikasi Toku Store.
+5. Halaman **Order Success** ditampilkan.
+6. Pesanan otomatis masuk ke halaman **Riwayat Pesanan**.
 ## 🧱 Teknologi yang Digunakan
 
 ### Frontend
