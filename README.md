@@ -18,9 +18,33 @@ Dompet Toku Store adalah aplikasi mobile Flutter untuk mengelola transaksi digit
 
 ---
 
-# 📸 Preview Tampilan Aplikasi
+## 🎥 Demo Aplikasi
 
-## 📸 Hasil Screenshot Tampilan Aplikasi
+<div align="center">
+
+<a href="https://youtu.be/XJjrwQlGnuI?si=8RiOUuIvdfyK4HI4">
+
+<img src="assets/images/promosi.png" alt="Demo Toku Store" width="100%"/>
+
+</a>
+
+<br><br>
+
+🎬 <b>Video Demonstrasi Toku Store & Dompet Toku</b>
+
+Pada video ini ditunjukkan alur lengkap penggunaan aplikasi mulai dari proses registrasi, login, menambahkan produk ke keranjang, checkout, pembayaran menggunakan Deep Link menuju aplikasi Dompet Toku, verifikasi PIN dan Google Authenticator (2FA), hingga transaksi berhasil dan status pesanan diperbarui secara otomatis.
+
+<br><br>
+
+<a href="https://youtu.be/XJjrwQlGnuI?si=8RiOUuIvdfyK4HI4">
+<img src="https://img.shields.io/badge/▶️%20Tonton%20di%20YouTube-red?style=for-the-badge&logo=youtube&logoColor=white">
+</a>
+
+</div>
+
+---
+
+# 📸 Preview Tampilan Aplikasi
 
 ### 💳 Dompet Toku (Aplikasi Dompet Digital)
 
